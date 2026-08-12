@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "run_id": "tr_c_data5x_seed42_t128",
+  "status": "completed",
+  "source_run_id": "data5x_seed42",
+  "derived_git_commit": "c8033c115bfda4c6933f8fa9390eee63ab0583aa",
+  "source_sp_git_commit": "b48a1f9237766ec1b0f157606c634749554623c6",
+  "completed_at": "2026-08-05T12:26:18+00:00",
+  "results": {
+    "description_tr_c": {
+      "eval_loss": 2.6160909682512283,
+      "eval_perplexity": 13.682135013443908,
+      "eval_top1": 0.4189453125,
+      "eval_top5": 0.685546875,
+      "eval_top10": 0.7802734375,
+      "evaluation_examples": 1024,
+      "optimizer_updates": 12500,
+      "training_windows": 100000,
+      "supervised_target_positions": 12800000,
+      "run_complete": true
+    },
+    "pixel_tr_c": {
+      "eval_loss": 2.9540574932470918,
+      "eval_perplexity": 19.18363349245081,
+      "eval_top1": 0.3779296875,
+      "eval_top5": 0.6162109375,
+      "eval_top10": 0.7216796875,
+      "evaluation_examples": 1024,
+      "optimizer_updates": 12500,
+      "training_windows": 100000,
+      "supervised_target_positions": 12800000,
+      "run_complete": true
+    }
+  },
+  "tracked_artifacts": {
+    "stlm_prototype/runs/tr_c_data5x_seed42_t128/manifest.json": {
+      "sha256": "162fc2825d53fe07f9b5b869158ce5fcf7753a204321e65573b94ac0ba990fe0",
+      "bytes": 5140
+    },
+    "stlm_prototype/runs/tr_c_data5x_seed42_t128/results/five_condition_comparison.json": {
+      "sha256": "dc2e54703778d5d15513cc9c1ab539986166d24797554d22a6728986d58c4283",
+      "bytes": 8754
+    },
+    "stlm_prototype/runs/tr_c_data5x_seed42_t128/results/description_tr_c.jsonl": {
+      "sha256": "21a630e6b137802d9d9042b844536cd97c29337c48626bb3f0f95530a573080f",
+      "bytes": 1265
+    },
+    "stlm_prototype/runs/tr_c_data5x_seed42_t128/results/pixel_tr_c.jsonl": {
+      "sha256": "0111aceeb99c4cf1dcfedac5a86d4861fe1a912e2df2364bee69fade92f5b6d1",
+      "bytes": 1239
+    },
+    "stlm_prototype/runs/tr_c_data5x_seed42_t128/results/description_tr_c_eval_predictions.jsonl": {
+      "sha256": "3698c37fa75439a1ec26ecf52d6fadeecbf10159ed3fde0ba8ea0d8f6e794652",
+      "bytes": 283004
+    },
+    "stlm_prototype/runs/tr_c_data5x_seed42_t128/results/pixel_tr_c_eval_predictions.jsonl": {
+      "sha256": "ea63fe857df6542b5e33d6c17a6a4378c3e75da5d736cb44283449cf93d49831",
+      "bytes": 282530
+    }
+  },
+  "checkpoint_artifacts": {
+    "stlm_prototype/runs/tr_c_data5x_seed42_t128/checkpoints/tr_c_description.pt": {
+      "sha256": "22001cd211962a4a10dfba72850bbe6554ed12ae2385b10445187375bfacd865",
+      "bytes": 32011878,
+      "tracked_in_git": false
+    },
+    "stlm_prototype/runs/tr_c_data5x_seed42_t128/checkpoints/tr_c_pixel.pt": {
+      "sha256": "fd90eb9cee7a674e0dbd7379422d8d6988d82c0a20c423e6c78603afcadd3027",
+      "bytes": 23163672,
+      "tracked_in_git": false
+    }
+  },
+  "archive": {
+    "status": "public",
+    "doi": null,
+    "url": "https://huggingface.co/emergent-wisdom/substrate-language-modeling",
+    "sha256_manifest": "SHA256SUMS",
+    "reported_checkpoint_count": 11,
+    "reported_checkpoint_bytes": 955969421
+  },
+  "caveats": [
+    "single training seed",
+    "heavily overlapping evaluation contexts",
+    "TR-C received 12.8 million labels per medium versus 100,000 final-position labels for TR-S",
+    "TR-C and TR-S differ in architecture, capacity, supervision density, and compute",
+    "no earlier-state intervention isolates a memory or history effect",
+    "no aligned-versus-permuted control tests semantic meaning"
+  ]
+}

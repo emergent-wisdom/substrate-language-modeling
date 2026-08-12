@@ -1,0 +1,143 @@
+{
+  "created_at": "2026-08-05T11:59:26.572484+00:00",
+  "device": "mps",
+  "experiment": {
+    "batch_sizes": {
+      "description_tr_c": 8,
+      "pixel_tr_c": 8
+    },
+    "causal_token_readout": {
+      "architecture": "pre-norm causal Transformer encoder",
+      "attention_heads": 8,
+      "d_model": 256,
+      "description_pool_bins": 8,
+      "dropout": 0.0,
+      "feedforward_dimension": 1024,
+      "gradient_clip_norm": null,
+      "layers": 2,
+      "loss": "cross-entropy over every aligned position",
+      "nonfinite_gradient_guard": true,
+      "optimizer": {
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "epsilon": 1e-08,
+        "learning_rate": 0.0003,
+        "name": "AdamW",
+        "weight_decay": 0.01
+      },
+      "pixel_pool_grid": 8,
+      "save_every_steps": 250
+    },
+    "context": 128,
+    "corpus": "roneneldan/TinyStories",
+    "corpus_identity": {
+      "dataset_fingerprint": "050e3813ad82e8d9",
+      "dataset_revision": "f54c09fd23315a6f9c86f9dc80f725de7d8f9c64",
+      "max_sentences": 250000,
+      "records_consumed": 250000,
+      "split": "train",
+      "token_count": 44812714,
+      "token_stream_sha256_int64_le": "4ef516a821988476725ce7b3de3c906dfa66b783ba2481908e4943ec3406874f"
+    },
+    "determinism": {
+      "bitwise_cross_platform_claim": false,
+      "torch_deterministic_algorithms": true
+    },
+    "direct_baseline_run_id": "baseline5x_seed42",
+    "evaluation": {
+      "final_position_contexts": 1024,
+      "holdout_tokens": 8192,
+      "method": "fixed evenly spaced next-token contexts",
+      "position": "final state in each fixed context"
+    },
+    "experiment_type": "contextual_readout",
+    "image_size": 64,
+    "initialization": "fresh deterministic initialization",
+    "max_sentences": 250000,
+    "microbatch_sizes": {
+      "description_tr_c": 8,
+      "pixel_tr_c": 8
+    },
+    "optimizer_updates": {
+      "description_tr_c": 12500,
+      "pixel_tr_c": 12500
+    },
+    "readout_scope": "causal substrate-state sequence only",
+    "rng_seeds": {
+      "context_sampling": 1042,
+      "readout_initialization": 42
+    },
+    "run_id": "tr_c_data5x_seed42_t128",
+    "seed": 42,
+    "shared_training_windows_across_media": true,
+    "source_run_id": "data5x_seed42",
+    "source_sp_frozen": true,
+    "source_token_access": false,
+    "state_sequence_length": 128,
+    "state_target_alignment": "same index: SP state t predicts source token t+1",
+    "supervised_target_positions": 12800000,
+    "supervised_target_positions_per_window": 128,
+    "text_description_length": 56,
+    "text_dimension": 384,
+    "training_windows": 100000,
+    "verified_inputs": {
+      "direct_baseline": {
+        "checkpoint": {
+          "path": "runs/baseline5x_seed42/checkpoints/baseline_direct_token.pt",
+          "sha256": "f005cbca6036296912e21f4ec9eb6c744efa3bf51873379b10366f6251ba8cb4"
+        },
+        "registry": "published/pilot_runs.json",
+        "run_id": "baseline5x_seed42"
+      },
+      "source_components": {
+        "checkpoints": {
+          "description_sp": {
+            "path": "runs/data5x_seed42/checkpoints/nn1_text_token_predictor.pt",
+            "sha256": "e5c19929c177c169bf855f97fa8f2b987c6332e8165037b68540f841d02355ad"
+          },
+          "pixel_sp": {
+            "path": "runs/data5x_seed42/checkpoints/nn1_pixel_predictor.pt",
+            "sha256": "43f89dfb1d427653b7e8a6254217c2602330a2d35e328308111081eca6a4d278"
+          }
+        },
+        "recovered_input_identity": {
+          "corpus": "roneneldan/TinyStories",
+          "corpus_revision": "f54c09fd23315a6f9c86f9dc80f725de7d8f9c64",
+          "datasets_fingerprint": "050e3813ad82e8d9",
+          "descriptions_sha256": "0410efbb1e0719a08bb0e0a2df1df90a5e343ceebc9afdfad174ab021c17fb0b",
+          "pixel_canonicals_sha256": "07eaf9a5908855bb2d100a9eb1f006df9deb35d1a2045800563db85fb936809e",
+          "pixel_generator": "Efficient-Large-Model/Sana_Sprint_1.6B_1024px_diffusers",
+          "pixel_generator_revision": "b3c9ce6f29ad4161a00fa58a62e476b9c75ca934",
+          "text_canonicals_sha256": "0e95393075c51fb0dccee0034d00cf2c765ce65b41ec5558b63c5b0565d0c36b",
+          "text_encoder": "sentence-transformers/all-MiniLM-L6-v2",
+          "text_encoder_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "vocabulary_sha256": "fc33302323234254df4644f8db17a62a0b4f06719d4f0f8dc5ecb4e12a41995d"
+        },
+        "registry": "published/pilot_runs.json",
+        "run_id": "data5x_seed42",
+        "source_git_commit": "b48a1f9237766ec1b0f157606c634749554623c6"
+      },
+      "vocabulary": {
+        "path": "data/vocab.json",
+        "sha256": "fc33302323234254df4644f8db17a62a0b4f06719d4f0f8dc5ecb4e12a41995d"
+      }
+    },
+    "vocab_size": 1024
+  },
+  "git_commit": "c8033c115bfda4c6933f8fa9390eee63ab0583aa",
+  "git_status": "",
+  "packages": {
+    "datasets": "5.0.0",
+    "diffusers": "0.38.0",
+    "numpy": "2.4.6",
+    "pillow": "12.2.0",
+    "torch": "2.12.0",
+    "tqdm": "4.68.1",
+    "transformers": "5.10.2"
+  },
+  "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+  "python": "3.14.5",
+  "torch": "2.12.0"
+}

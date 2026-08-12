@@ -1,0 +1,155 @@
+{
+  "recovered_input_identity": {
+    "corpus": "roneneldan/TinyStories",
+    "corpus_revision": "f54c09fd23315a6f9c86f9dc80f725de7d8f9c64",
+    "datasets_fingerprint": "050e3813ad82e8d9",
+    "descriptions_sha256": "0410efbb1e0719a08bb0e0a2df1df90a5e343ceebc9afdfad174ab021c17fb0b",
+    "pixel_canonicals_sha256": "07eaf9a5908855bb2d100a9eb1f006df9deb35d1a2045800563db85fb936809e",
+    "pixel_generator": "Efficient-Large-Model/Sana_Sprint_1.6B_1024px_diffusers",
+    "pixel_generator_revision": "b3c9ce6f29ad4161a00fa58a62e476b9c75ca934",
+    "text_canonicals_sha256": "0e95393075c51fb0dccee0034d00cf2c765ce65b41ec5558b63c5b0565d0c36b",
+    "text_encoder": "sentence-transformers/all-MiniLM-L6-v2",
+    "text_encoder_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "vocabulary_sha256": "fc33302323234254df4644f8db17a62a0b4f06719d4f0f8dc5ecb4e12a41995d"
+  },
+  "runs": {
+    "baseline5x_seed42": {
+      "artifact_sha256": {
+        "manifest.json": "727cc81b457cc45cdcf8909bb7d5c5b758c78c36758876c6441b705ab67108c2",
+        "results/baseline_direct_token.jsonl": "8dd215aec1ffbe9f6c6c81e7b199c93f04a9c5490537920b435886ba514803c3"
+      },
+      "checkpoint_sha256": {
+        "baseline_direct_token.pt": "f005cbca6036296912e21f4ec9eb6c744efa3bf51873379b10366f6251ba8cb4"
+      },
+      "device": "mps",
+      "experiment_type": "direct_token",
+      "git_commit": "4dfe6d74a16e6e4d977a817d84101c682af00118",
+      "max_sentences": 250000,
+      "metrics": {
+        "direct_token": {
+          "eval_loss": 2.208002107683569,
+          "eval_perplexity": 9.097522354216977,
+          "eval_top1": 0.447265625,
+          "eval_top5": 0.74609375,
+          "eval_top10": 0.8525390625,
+          "evaluation_examples": 1024,
+          "frequency_top1": 0.0810546875,
+          "frequency_top5": 0.2724609375,
+          "frequency_top10": 0.39453125,
+          "head_params": 394240,
+          "params": 11484160,
+          "step": 21877
+        }
+      },
+      "python": "3.14.5",
+      "seed": 42,
+      "token_count": 44812714,
+      "token_stream_sha256_int64_le": "4ef516a821988476725ce7b3de3c906dfa66b783ba2481908e4943ec3406874f",
+      "torch": "2.12.0"
+    },
+    "data5x_seed42": {
+      "checkpoint_sha256": {
+        "nn1_pixel_predictor.pt": "43f89dfb1d427653b7e8a6254217c2602330a2d35e328308111081eca6a4d278",
+        "nn1_text_token_predictor.pt": "e5c19929c177c169bf855f97fa8f2b987c6332e8165037b68540f841d02355ad",
+        "nn2_pixel_translator.pt": "fa43dfe01bd91b68fa2dca9c6a26cfb5a270b08ca327e213e1265e1d34e725ab",
+        "nn2_text_transformer_translator.pt": "c81d452e9c77644445d80d5e7a0f0b38b35873a5a6243be0b2bdb5c62605c5e3"
+      },
+      "device": "mps",
+      "git_commit": "b48a1f9237766ec1b0f157606c634749554623c6",
+      "max_sentences": 250000,
+      "metrics": {
+        "pixel_nn1": {
+          "eval_mse": 0.04832520708441734,
+          "step": 21877
+        },
+        "pixel_nn2": {
+          "eval_loss": 4.2833346631377935,
+          "eval_top1": 0.2783203125,
+          "eval_top5": 0.443359375,
+          "eval_top10": 0.529296875,
+          "evaluation_examples": 1024,
+          "frequency_top1": 0.0810546875,
+          "frequency_top5": 0.2724609375,
+          "frequency_top10": 0.39453125,
+          "training_examples": 100000
+        },
+        "text_nn1": {
+          "eval_all_cos": 0.4821929335594177,
+          "eval_content_cos": 0.4166814684867859,
+          "eval_cosine_distance": 0.517807126045227
+        },
+        "text_nn2": {
+          "eval_loss": 3.5413276636973023,
+          "eval_top1": 0.349609375,
+          "eval_top5": 0.5419921875,
+          "eval_top10": 0.6279296875,
+          "evaluation_examples": 1024,
+          "frequency_top1": 0.0810546875,
+          "frequency_top5": 0.2724609375,
+          "frequency_top10": 0.39453125,
+          "training_examples": 100000
+        }
+      },
+      "python": "3.14.5",
+      "seed": 42,
+      "token_count": 44812714,
+      "token_stream_sha256_int64_le": "4ef516a821988476725ce7b3de3c906dfa66b783ba2481908e4943ec3406874f",
+      "torch": "2.12.0"
+    },
+    "paper_seed42_e1_n2-100k": {
+      "checkpoint_sha256": {
+        "nn1_pixel_predictor.pt": "9c5872b2b56107c612717d5c91a9911018a003329707abd529708d1cdc61d1c3",
+        "nn1_text_token_predictor.pt": "64f906b8376fbb3fb40053ee30671504f40bf30b9ebadcef71289b37ced6f4f3",
+        "nn2_pixel_translator.pt": "7929cfc1197c50206f9cfa4e4836ed0f85748d972ba97998d70a5871ceb1ac8a",
+        "nn2_text_transformer_translator.pt": "fbf7fc04533fcecb94c65e23ed5eabae4282e1fb4f211b47f3af9678ef87665b"
+      },
+      "device": "mps",
+      "git_commit": "7243e2b6769b677ac2346c0dc26e81cf22061efe",
+      "max_sentences": 50000,
+      "metrics": {
+        "pixel_nn1": {
+          "eval_mse": 0.05820956826210022,
+          "step": 4305
+        },
+        "pixel_nn2": {
+          "eval_loss": 4.465901045128703,
+          "eval_top1": 0.2197265625,
+          "eval_top5": 0.4013671875,
+          "eval_top10": 0.5029296875,
+          "evaluation_examples": 1024,
+          "frequency_top1": 0.1103515625,
+          "frequency_top5": 0.2744140625,
+          "frequency_top10": 0.3974609375,
+          "training_examples": 100000
+        },
+        "text_nn1": {
+          "eval_all_cos": 0.473347544670105,
+          "eval_content_cos": 0.37873226404190063,
+          "eval_cosine_distance": 0.5266525149345398
+        },
+        "text_nn2": {
+          "eval_loss": 3.9979620575904846,
+          "eval_top1": 0.296875,
+          "eval_top5": 0.478515625,
+          "eval_top10": 0.560546875,
+          "evaluation_examples": 1024,
+          "frequency_top1": 0.1103515625,
+          "frequency_top5": 0.2744140625,
+          "frequency_top10": 0.3974609375,
+          "training_examples": 100000
+        }
+      },
+      "python": "3.14.5",
+      "seed": 42,
+      "token_count": 8826412,
+      "token_stream_sha256_int64_le": "4c14f625dc8389df368c4982743baa9276cbec5202cdac30eee5de8f6eac9d17",
+      "torch": "2.12.0"
+    }
+  },
+  "schema_version": 1,
+  "verification": {
+    "date": "2026-07-27",
+    "result": "all four translator evaluations and the direct-token evaluation reproduced at full precision",
+    "script": "verify_published_results.py"
+  }
+}

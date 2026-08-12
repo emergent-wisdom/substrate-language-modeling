@@ -1,0 +1,233 @@
+{
+  "baseline_run_id": "baseline5x_seed42",
+  "comparison": "single-state versus causal-sequence token readout",
+  "comparison_caveat": "TR-C is trained on 12,800,000 supervised target positions; the published TR-S conditions used 100,000 single-position targets. This is not a supervision-matched history-effect estimate.",
+  "conditions": {
+    "description_tr_c": {
+      "medium": "description",
+      "metrics": {
+        "context_length": 128,
+        "eval_loss": 2.6160909682512283,
+        "eval_perplexity": 13.682135013443908,
+        "eval_top1": 0.4189453125,
+        "eval_top10": 0.7802734375,
+        "eval_top5": 0.685546875,
+        "evaluation_examples": 1024,
+        "frequency_top1": 0.0810546875,
+        "frequency_top10": 0.39453125,
+        "frequency_top5": 0.2724609375,
+        "hyperparameters": {
+          "context_length": 128,
+          "context_sampling_seed": 1042,
+          "d_model": 256,
+          "description_pool_bins": 8,
+          "initialization": "fresh_deterministic",
+          "initialization_seed": 42,
+          "learning_rate": 0.0003,
+          "logical_batch": 8,
+          "medium": "description",
+          "microbatch": 8,
+          "objective": "all_aligned_positions",
+          "optimizer": "AdamW",
+          "source_token_access": false,
+          "state_adapter": "ordered adaptive-average-pool, linear, GELU, LayerNorm",
+          "supervised_target_positions": 12800000,
+          "temporal_ff_dim": 1024,
+          "temporal_heads": 8,
+          "temporal_layers": 2,
+          "training_windows": 100000
+        },
+        "medium": "description",
+        "objective": "all_aligned_positions",
+        "optimizer_updates": 12500,
+        "params": 2663168,
+        "readout": "TR-C",
+        "run_id": "tr_c_data5x_seed42_t128",
+        "source_checkpoint_sha256": {
+          "sp": "e5c19929c177c169bf855f97fa8f2b987c6332e8165037b68540f841d02355ad"
+        },
+        "source_run_id": "data5x_seed42",
+        "step": 12500,
+        "supervised_target_positions": 12800000,
+        "training_windows": 100000
+      },
+      "provenance": {
+        "checkpoint_path": "checkpoints/tr_c_description.pt",
+        "checkpoint_sha256": "22001cd211962a4a10dfba72850bbe6554ed12ae2385b10445187375bfacd865",
+        "kind": "derived",
+        "metrics_path": "results/description_tr_c.jsonl",
+        "metrics_sha256": "21a630e6b137802d9d9042b844536cd97c29337c48626bb3f0f95530a573080f",
+        "predictions_path": "results/description_tr_c_eval_predictions.jsonl",
+        "predictions_sha256": "3698c37fa75439a1ec26ecf52d6fadeecbf10159ed3fde0ba8ea0d8f6e794652"
+      },
+      "readout": "TR-C",
+      "run_id": "tr_c_data5x_seed42_t128"
+    },
+    "description_tr_s": {
+      "medium": "description",
+      "metrics": {
+        "eval_loss": 3.5413276636973023,
+        "eval_perplexity": 34.51271005893528,
+        "eval_top1": 0.349609375,
+        "eval_top10": 0.6279296875,
+        "eval_top5": 0.5419921875,
+        "evaluation_examples": 1024,
+        "frequency_top1": 0.0810546875,
+        "frequency_top10": 0.39453125,
+        "frequency_top5": 0.2724609375,
+        "training_examples": 100000
+      },
+      "provenance": {
+        "checkpoint_sha256": {
+          "sp": "e5c19929c177c169bf855f97fa8f2b987c6332e8165037b68540f841d02355ad",
+          "tr_s": "c81d452e9c77644445d80d5e7a0f0b38b35873a5a6243be0b2bdb5c62605c5e3"
+        },
+        "kind": "published",
+        "registry": "published/pilot_runs.json"
+      },
+      "readout": "TR-S",
+      "run_id": "data5x_seed42"
+    },
+    "direct_token": {
+      "medium": "tokens",
+      "metrics": {
+        "eval_loss": 2.208002107683569,
+        "eval_perplexity": 9.097522354216977,
+        "eval_top1": 0.447265625,
+        "eval_top10": 0.8525390625,
+        "eval_top5": 0.74609375,
+        "evaluation_examples": 1024,
+        "frequency_top1": 0.0810546875,
+        "frequency_top10": 0.39453125,
+        "frequency_top5": 0.2724609375,
+        "head_params": 394240,
+        "params": 11484160,
+        "step": 21877
+      },
+      "provenance": {
+        "checkpoint_sha256": "f005cbca6036296912e21f4ec9eb6c744efa3bf51873379b10366f6251ba8cb4",
+        "kind": "published",
+        "registry": "published/pilot_runs.json"
+      },
+      "readout": "direct",
+      "run_id": "baseline5x_seed42"
+    },
+    "pixel_tr_c": {
+      "medium": "pixel",
+      "metrics": {
+        "context_length": 128,
+        "eval_loss": 2.9540574932470918,
+        "eval_perplexity": 19.18363349245081,
+        "eval_top1": 0.3779296875,
+        "eval_top10": 0.7216796875,
+        "eval_top5": 0.6162109375,
+        "evaluation_examples": 1024,
+        "frequency_top1": 0.0810546875,
+        "frequency_top10": 0.39453125,
+        "frequency_top5": 0.2724609375,
+        "hyperparameters": {
+          "context_length": 128,
+          "context_sampling_seed": 1042,
+          "d_model": 256,
+          "initialization": "fresh_deterministic",
+          "initialization_seed": 42,
+          "learning_rate": 0.0003,
+          "logical_batch": 8,
+          "medium": "pixel",
+          "microbatch": 8,
+          "objective": "all_aligned_positions",
+          "optimizer": "AdamW",
+          "pixel_pool_grid": 8,
+          "source_token_access": false,
+          "state_adapter": "adaptive-average-pool, linear, GELU, LayerNorm",
+          "supervised_target_positions": 12800000,
+          "temporal_ff_dim": 1024,
+          "temporal_heads": 8,
+          "temporal_layers": 2,
+          "training_windows": 100000
+        },
+        "medium": "pixel",
+        "objective": "all_aligned_positions",
+        "optimizer_updates": 12500,
+        "params": 1925888,
+        "readout": "TR-C",
+        "run_id": "tr_c_data5x_seed42_t128",
+        "source_checkpoint_sha256": {
+          "sp": "43f89dfb1d427653b7e8a6254217c2602330a2d35e328308111081eca6a4d278"
+        },
+        "source_run_id": "data5x_seed42",
+        "step": 12500,
+        "supervised_target_positions": 12800000,
+        "training_windows": 100000
+      },
+      "provenance": {
+        "checkpoint_path": "checkpoints/tr_c_pixel.pt",
+        "checkpoint_sha256": "fd90eb9cee7a674e0dbd7379422d8d6988d82c0a20c423e6c78603afcadd3027",
+        "kind": "derived",
+        "metrics_path": "results/pixel_tr_c.jsonl",
+        "metrics_sha256": "0111aceeb99c4cf1dcfedac5a86d4861fe1a912e2df2364bee69fade92f5b6d1",
+        "predictions_path": "results/pixel_tr_c_eval_predictions.jsonl",
+        "predictions_sha256": "ea63fe857df6542b5e33d6c17a6a4378c3e75da5d736cb44283449cf93d49831"
+      },
+      "readout": "TR-C",
+      "run_id": "tr_c_data5x_seed42_t128"
+    },
+    "pixel_tr_s": {
+      "medium": "pixel",
+      "metrics": {
+        "eval_loss": 4.2833346631377935,
+        "eval_perplexity": 72.48173964257134,
+        "eval_top1": 0.2783203125,
+        "eval_top10": 0.529296875,
+        "eval_top5": 0.443359375,
+        "evaluation_examples": 1024,
+        "frequency_top1": 0.0810546875,
+        "frequency_top10": 0.39453125,
+        "frequency_top5": 0.2724609375,
+        "training_examples": 100000
+      },
+      "provenance": {
+        "checkpoint_sha256": {
+          "sp": "43f89dfb1d427653b7e8a6254217c2602330a2d35e328308111081eca6a4d278",
+          "tr_s": "fa43dfe01bd91b68fa2dca9c6a26cfb5a270b08ca327e213e1265e1d34e725ab"
+        },
+        "kind": "published",
+        "registry": "published/pilot_runs.json"
+      },
+      "readout": "TR-S",
+      "run_id": "data5x_seed42"
+    }
+  },
+  "derived_run_id": "tr_c_data5x_seed42_t128",
+  "holdout": {
+    "evaluation_examples": 1024,
+    "frequency_top1": 0.0810546875,
+    "frequency_top10": 0.39453125,
+    "frequency_top5": 0.2724609375,
+    "method": "fixed evenly spaced next-token contexts",
+    "position": "final state in each context"
+  },
+  "provenance": {
+    "derived_manifest": "manifest.json",
+    "derived_manifest_sha256": "162fc2825d53fe07f9b5b869158ce5fcf7753a204321e65573b94ac0ba990fe0",
+    "published_registry": "published/pilot_runs.json",
+    "published_registry_sha256": "236b71a934e87bcedc5551ee5633fdd53376c5c9eaa8b008004f6cc8c068fd56"
+  },
+  "schema_version": 1,
+  "source_run_id": "data5x_seed42",
+  "terminology": {
+    "SP": "substrate predictor",
+    "TR-C": "causal token readout",
+    "TR-S": "single-state token readout"
+  },
+  "training_protocol": {
+    "objective": "cross-entropy over every aligned position",
+    "shared_training_windows_across_media": true,
+    "source_sp": "frozen published checkpoint",
+    "state_sequence_length": 128,
+    "state_target_alignment": "same index: SP state t predicts source token t+1",
+    "supervised_target_positions": 12800000,
+    "tr_c_initialization": "fresh deterministic initialization",
+    "training_windows": 100000
+  }
+}

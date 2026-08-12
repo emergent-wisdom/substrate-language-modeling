@@ -1,0 +1,54 @@
+# Secrets — never commit
+.elabs_key
+*.key
+*.pem
+.env
+.env.*
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.fdb_latexmk
+*.fls
+*.toc
+*.bbl
+*.blg
+*.synctex.gz
+
+# Trained models and large generated data
+stlm_prototype/data/*.pt
+stlm_prototype/data/*.npz
+stlm_prototype/data/canonicals/
+stlm_prototype/data/canonicals_*/
+# Per-resolution phase-0 output folders are published in the artifact archive.
+stlm_prototype/data/[0-9]*/
+stlm_prototype/data/images/
+stlm_prototype/data/strip.png
+stlm_prototype/run_logs/
+stlm_prototype/runs/
+
+# Backups
+*.bak
+*.bak[0-9]*
+
+# Scratch test outputs (canonical copies live in figures/)
+/apple_grid.png
+/test_apple.png
+/output/
+/tmp/
+
+# Editor / IDE
+.vscode/
+.idea/
