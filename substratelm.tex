@@ -2,9 +2,8 @@
 
 \documentclass[11pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
 \usepackage{hyperref}
-\hypersetup{colorlinks=true, linkcolor=blue!70!black, citecolor=blue!70!black, urlcolor=blue!70!black,
+\hypersetup{hidelinks,
   pdftitle={Toward Compulsory Scene-Mediated Language Modeling: Meaningful Substrates for Every Next Word},
   pdfauthor={Henrik Westerberg},
   pdfsubject={A research program for compulsory substrate-mediated language generation, latent scene induction, multiscale composition, and persistent configurational state},
@@ -13,7 +12,7 @@
 \usepackage{booktabs}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{arxiv}
+\usepackage[longtitle]{emergentwisdom-preprint}
 \renewcommand{\shorttitle}{Compulsory Scene-Mediated Language Modeling}
 \usepackage{microtype}
 \usepackage{tikz}
@@ -21,7 +20,7 @@
 \usepackage{graphicx}
 \setlength{\emergencystretch}{2em}
 
-\date{August 12, 2026}
+\ewrevisedtoday{August 12, 2026}
 \title{Toward Compulsory Scene-Mediated Language Modeling:\\Meaningful Substrates for Every Next Word}
 
 \author{Henrik Westerberg\\Emergent Wisdom\\\texttt{henrik.westerberg@emergentwisdom.org}}
@@ -484,15 +483,13 @@ The next tests separate three questions. A matched full-history versus current-s
 
 The stages are escalation options rather than requirements. Multiscale targets are warranted when lexical targets fail to compose, video when still media fail to carry transformations, and explicit persistence when latent integration fails to maintain, expose, or manipulate a coherent state. The program succeeds only if some version becomes more than an expensive code channel: its reusable meaningful organization must be causally responsible for behavior.
 
-\section*{Code and Reproducibility}
+\section*{Code and Artifact Availability}
 
 Code, paper source, vocabulary metadata, immutable run manifests, compact metrics, and per-example TR-C predictions accompany the paper at \url{https://github.com/emergent-wisdom/substrate-language-modeling}. Canonical target tensors and images, together with the exact eleven checkpoints across the four reported run IDs, are hosted in the companion artifact repository at \url{https://huggingface.co/emergent-wisdom/substrate-language-modeling}. The tracked release records and the artifact repository's \texttt{SHA256SUMS} manifest identify released files by path, byte size, and SHA-256 digest.
 
 The reported runs use the TinyStories revision \texttt{f54c09fd2331}. Their manifests bind the dataset and encoder revisions, token streams, vocabulary, canonical tensors, training settings, metrics, and checkpoints by hash. Exact saved-checkpoint evaluation reproduces the reported TR-S measurements at full precision; the TR-C prediction files reproduce top-$k$ counts exactly and NLL within $10^{-7}$, the tolerance needed after serializing per-example float32 log probabilities. Fresh training from frozen inputs is pinned and seeded, although Apple MPS does not guarantee bitwise-identical training across hardware or software versions. The two repositories therefore support both external use of the exact checkpoint bytes and independent training replication from authenticated inputs.
 
 \begin{thebibliography}{99}
-
-\bibitem{talespin1977} J. R. Meehan. TALE-SPIN, An Interactive Program that Writes Stories. \emph{Proceedings of the 5th International Joint Conference on Artificial Intelligence (IJCAI)}, pp. 91--98, 1977.
 
 \bibitem{implicitmeaning2021} B. Z. Li, M. Nye, and J. Andreas. Implicit Representations of Meaning in Neural Language Models. \emph{Proceedings of ACL-IJCNLP}, pp. 1813--1827, 2021.
 
@@ -504,15 +501,15 @@ The reported runs use the TinyStories revision \texttt{f54c09fd2331}. Their mani
 
 \bibitem{gurnee2024spacetime} W. Gurnee and M. Tegmark. Language Models Represent Space and Time. \emph{ICLR}, 2024.
 
-\bibitem{coconut2025} S. Hao, S. Sukhbaatar, D. Su, X. Li, Z. Hu, J. Weston, and Y. Tian. Training Large Language Models to Reason in a Continuous Latent Space. \emph{COLM}, 2025.
+\bibitem{barsalou} L. W. Barsalou. Perceptual symbol systems. \emph{Behavioral and Brain Sciences}, 1999.
 
-\bibitem{dynamicentities2023} J. Guan, Z. Yang, R. Zhang, Z. Hu, and M. Huang. Generating Coherent Narratives by Learning Dynamic and Discrete Entity States with a Contrastive Framework. \emph{Proceedings of the AAAI Conference on Artificial Intelligence}, 37(11):12836--12844, 2023.
+\bibitem{lakoff_johnson} G. Lakoff and M. Johnson. \emph{Metaphors We Live By}. University of Chicago Press, 1980.
 
-\bibitem{imagineverbalize2022} P. Wang, J. Zamora, J. Liu, F. Ilievski, M. Chen, and X. Ren. Contextualized Scene Imagination for Generative Commonsense Reasoning. \emph{International Conference on Learning Representations (ICLR)}, 2022.
+\bibitem{ecoc2019} J. O'Neill and D. Bollegala. Error-Correcting Neural Sequence Prediction. \emph{arXiv:1901.07002}, 2019.
 
-\bibitem{visualscaffolding2026} B. Mohapatra, G. Duca, L. Romary, and J. Cassell. Using Machine Mental Imagery for Representing Common Ground in Situated Dialogue. \emph{arXiv:2604.21144}, 2026.
+\bibitem{svd2023} A. Blattmann et al. Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets. \emph{arXiv:2311.15127}, 2023.
 
-\bibitem{orca2026} Y. Wang et al. Orca: The World is in Your Mind. \emph{arXiv:2606.30534}, 2026.
+\bibitem{sora2024} OpenAI. Video Generation Models as World Simulators (Sora technical report), 2024.
 
 \bibitem{cbm2020} P. W. Koh et al. Concept Bottleneck Models. \emph{ICML}, 2020.
 
@@ -530,8 +527,6 @@ The reported runs use the TinyStories revision \texttt{f54c09fd2331}. Their mani
 
 \bibitem{vmf2019} S. Kumar and Y. Tsvetkov. Von Mises--Fisher Loss for Training Sequence to Sequence Models with Continuous Outputs. \emph{ICLR}, 2019.
 
-\bibitem{ecoc2019} J. O'Neill and D. Bollegala. Error-Correcting Neural Sequence Prediction. \emph{arXiv:1901.07002}, 2019.
-
 \bibitem{nextconcept2026} Y. Liu et al. Next Concept Prediction in Discrete Latent Space Leads to Stronger Language Models. \emph{arXiv:2602.08984}, 2026.
 
 \bibitem{vokenization2020} H. Tan and M. Bansal. Vokenization: Improving Language Understanding with Contextualized, Visual-Grounded Supervision. \emph{EMNLP}, 2020.
@@ -544,7 +539,23 @@ The reported runs use the TinyStories revision \texttt{f54c09fd2331}. Their mani
 
 \bibitem{blindvalm2025} P. Ontalvilla, A. Ormazabal, and G. Azkune. Improving the Efficiency of Visually Augmented Language Models. \emph{COLING}, 2025.
 
-\bibitem{silentlvr2026} D. Zhu et al. Leveraging Latent Visual Reasoning in Silence. \emph{arXiv:2605.18641}, 2026.
+\bibitem{talespin1977} J. R. Meehan. TALE-SPIN, An Interactive Program that Writes Stories. \emph{Proceedings of the 5th International Joint Conference on Artificial Intelligence (IJCAI)}, pp. 91--98, 1977.
+
+\bibitem{dynamicentities2023} J. Guan, Z. Yang, R. Zhang, Z. Hu, and M. Huang. Generating Coherent Narratives by Learning Dynamic and Discrete Entity States with a Contrastive Framework. \emph{Proceedings of the AAAI Conference on Artificial Intelligence}, 37(11):12836--12844, 2023.
+
+\bibitem{imagineverbalize2022} P. Wang, J. Zamora, J. Liu, F. Ilievski, M. Chen, and X. Ren. Contextualized Scene Imagination for Generative Commonsense Reasoning. \emph{International Conference on Learning Representations (ICLR)}, 2022.
+
+\bibitem{visualscaffolding2026} B. Mohapatra, G. Duca, L. Romary, and J. Cassell. Using Machine Mental Imagery for Representing Common Ground in Situated Dialogue. \emph{arXiv:2604.21144}, 2026.
+
+\bibitem{orca2026} Y. Wang et al. Orca: The World is in Your Mind. \emph{arXiv:2606.30534}, 2026.
+
+\bibitem{coconut2025} S. Hao, S. Sukhbaatar, D. Su, X. Li, Z. Hu, J. Weston, and Y. Tian. Training Large Language Models to Reason in a Continuous Latent Space. \emph{COLM}, 2025.
+
+\bibitem{imagen2022} C. Saharia et al. Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding (Imagen). \emph{NeurIPS}, 2022.
+
+\bibitem{stablediffusion} R. Rombach et al. High-Resolution Image Synthesis with Latent Diffusion Models. \emph{CVPR}, 2022.
+
+\bibitem{flux2024} Black Forest Labs. FLUX.1. Open-weights text-to-image model release, 2024.
 
 \bibitem{lecun2022path} Y. LeCun. A Path Towards Autonomous Machine Intelligence. \emph{OpenReview / position paper}, 2022.
 
@@ -560,9 +571,15 @@ The reported runs use the TinyStories revision \texttt{f54c09fd2331}. Their mani
 
 \bibitem{jepat2025} S. Wan et al. JEPA-T: Joint-Embedding Predictive Architecture with Text Fusion for Image Generation. \emph{arXiv:2510.00974}, 2025.
 
-\bibitem{imagen2022} C. Saharia et al. Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding (Imagen). \emph{NeurIPS}, 2022.
+\bibitem{lvr2025} B. Li et al. Latent Visual Reasoning. \emph{arXiv:2509.24251}, 2025.
 
-\bibitem{stablediffusion} R. Rombach et al. High-Resolution Image Synthesis with Latent Diffusion Models. \emph{CVPR}, 2022.
+\bibitem{mirage2025} Z. Yang et al. Machine Mental Imagery: Empower Multimodal Reasoning with Latent Visual Tokens. \emph{arXiv:2506.17218}, 2025.
+
+\bibitem{latentsketchpad2025} H. Wang et al. Latent Sketchpad: Sketching Visual Thoughts to Elicit Multimodal Reasoning in MLLMs. \emph{arXiv:2510.24514}, 2025.
+
+\bibitem{monet2025} Q. Wang, Y. Shi, Y. Wang, Y. Zhang, P. Wan, K. Gai, X. Ying, and Y. Wang. Monet: Reasoning in Latent Visual Space Beyond Images and Language. \emph{arXiv:2511.21395}, 2025.
+
+\bibitem{silentlvr2026} D. Zhu et al. Leveraging Latent Visual Reasoning in Silence. \emph{arXiv:2605.18641}, 2026.
 
 \bibitem{pixel2022} P. Rust et al. Language Modelling with Pixels. \emph{ICLR}, 2023.
 
@@ -572,37 +589,19 @@ The reported runs use the TinyStories revision \texttt{f54c09fd2331}. Their mani
 
 \bibitem{deepseekocr2026} H. Wei, Y. Sun, and Y. Li. DeepSeek-OCR: Contexts Optical Compression. \emph{arXiv:2510.18234}, 2025.
 
-\bibitem{lvr2025} B. Li et al. Latent Visual Reasoning. \emph{arXiv:2509.24251}, 2025.
-
-\bibitem{mirage2025} Z. Yang et al. Machine Mental Imagery: Empower Multimodal Reasoning with Latent Visual Tokens. \emph{arXiv:2506.17218}, 2025.
-
-\bibitem{flux2024} Black Forest Labs. FLUX.1. Open-weights text-to-image model release, 2024.
-
 \bibitem{fluid2024} L. Fan et al. Fluid: Scaling Autoregressive Text-to-image Generative Models with Continuous Tokens. \emph{arXiv:2410.13863}, 2024.
 
 \bibitem{llamagen2024} P. Sun et al. LlamaGen: Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation. \emph{arXiv:2406.06525}, 2024.
 
 \bibitem{nextstep2025} StepFun NextStep Team. NextStep-1: Toward Autoregressive Image Generation with Continuous Tokens at Scale. \emph{arXiv:2508.10711}, 2025.
 
-\bibitem{latentsketchpad2025} H. Wang et al. Latent Sketchpad: Sketching Visual Thoughts to Elicit Multimodal Reasoning in MLLMs. \emph{arXiv:2510.24514}, 2025.
-
-\bibitem{monet2025} Q. Wang, Y. Shi, Y. Wang, Y. Zhang, P. Wan, K. Gai, X. Ying, and Y. Wang. Monet: Reasoning in Latent Visual Space Beyond Images and Language. \emph{arXiv:2511.21395}, 2025.
-
-\bibitem{svd2023} A. Blattmann et al. Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets. \emph{arXiv:2311.15127}, 2023.
-
-\bibitem{sora2024} OpenAI. Video Generation Models as World Simulators (Sora technical report), 2024.
-
-\bibitem{tinystories2023} R. Eldan and Y. Li. TinyStories: How Small Can Language Models Be and Still Speak Coherent English? \emph{arXiv:2305.07759}, 2023.
-
 \bibitem{sanasprint2025} J. Chen et al. SANA-Sprint: One-Step Diffusion with Continuous-Time Consistency Distillation. \emph{ICCV / arXiv:2503.09641}, 2025. Checkpoint \texttt{Efficient-Large-Model/Sana\_Sprint\_1.6B\_1024px}.
 
 \bibitem{sbert2019} N. Reimers and I. Gurevych. Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks. \emph{EMNLP}, 2019. Checkpoint \texttt{sentence-transformers/all-MiniLM-L6-v2}.
 
+\bibitem{tinystories2023} R. Eldan and Y. Li. TinyStories: How Small Can Language Models Be and Still Speak Coherent English? \emph{arXiv:2305.07759}, 2023.
+
 \bibitem{chinchilla2022} J. Hoffmann et al. Training Compute-Optimal Large Language Models. \emph{arXiv:2203.15556}, 2022.
-
-\bibitem{lakoff_johnson} G. Lakoff and M. Johnson. \emph{Metaphors We Live By}. University of Chicago Press, 1980.
-
-\bibitem{barsalou} L. W. Barsalou. Perceptual symbol systems. \emph{Behavioral and Brain Sciences}, 1999.
 
 \end{thebibliography}
 
