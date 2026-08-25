@@ -47,7 +47,7 @@ In STLM, the substrate is constitutive rather than optional: every lexical decis
 
 We use \emph{scene} inclusively for a joint configurational state containing physical entities and spatial relations, but also events, roles, mechanisms, constraints, and abstract schemas. A couch contributes an object with spatial requirements; ``however'' contributes a contrast relation; a promise contributes agents, obligations, and possible violations. Pixels and video are natural carriers for physical structure, while structured descriptions can preserve mechanisms, relations, and consequences where literal depiction is strained. The intended representation is broader than visual imagery but more constrained than an arbitrary hidden state: its authored organization must support testable composition and intervention.
 
-The motivating analogy is human reading, in which prose can prompt a reader to construct and revise a scene rather than retain only surface wording. Perceptual-symbol, conceptual-metaphor, and embodied accounts provide precedents for extending imagistic or configurational primitives into abstract domains \cite{barsalou,lakoff_johnson}. STLM neither assumes that all reading is visual nor attempts to reproduce human imagery, and its architecture does not depend on those cognitive accounts being correct. They motivate the choice of substrate; causal controls must establish what the model actually uses.
+The motivating analogy is human reading, in which prose can prompt a reader to construct and revise a scene rather than retain only surface wording. Perceptual-symbol, dual-coding, conceptual-metaphor, and embodied accounts provide precedents for relating linguistic, imagistic, and configurational representations \cite{barsalou,paivio,lakoff_johnson}. STLM neither assumes that all reading is visual nor attempts to reproduce human imagery, and its architecture does not depend on those cognitive accounts being correct. They motivate the choice of substrate; causal controls must establish what the model actually uses.
 
 Entangled Alignment names a related corpus-level omission \emph{the Missing Reader}: source text records conclusions more fully than the reader-side questions, expectations, evaluations, and revisions through which understanding changes \cite{entangledalignment2026}. STLM isolates a complementary candidate omission. Text corpora generally do not preserve the visual or schematic state that a reader might construct while following a story, mechanism, proof, or program. The proposed substrates are authored synthetic representational targets, not recovered human mental imagery; whether any such target helps a model is an empirical question.
 
@@ -211,9 +211,9 @@ At each position, a learned readout would have to select the information relevan
 
 Physical and schematic content may be distributed, superposed, nonlinearly separable, or related by an arbitrary rotation within one state. We hypothesize that a joint objective anchoring physical structure to reconstruction and schematic structure to relational language would give the two functionally distinguishable roles. Probe separability alone would not establish such specialization; the tests under H5 (§7) therefore require causal intervention.
 
-\paragraph{What Stage 5 tests.} Stage 5 predicts gains where generation depends on maintaining and manipulating a shared state: entity and spatial consistency over long spans, continuation after controlled counterfactual edits, and continuity of abstract relations. The gains should be selective, survive matched-compute comparison, and follow the direction of interventions on the persistent state. Section 7 states the corresponding tests.
+\paragraph{What Stage 5 tests.} Stage 5 predicts gains where generation depends on maintaining and manipulating a shared state: entity and spatial consistency over long spans (a character introduced earlier remains present unless an event moves or removes them), continuation after controlled counterfactual edits (remove an acquired key and propagate the consequences), and continuity of abstract relations. The gains should be selective, survive matched-compute comparison, and follow the direction of interventions on the persistent state. Section 7 states the corresponding tests.
 
-\paragraph{Open design problems.} Implementing Stage 5 requires machinery for maintaining and updating the scene across positions, analogous to persistent video world models. A concrete architecture must specify how event-level scene intervals synchronize with variable-length language; how the readout selects relevant state without an unrestricted hidden-state bypass; which loss prevents drift into an arbitrary recurrent code; whether physical and schematic factors acquire causally distinguishable roles despite being distributed or superposed; how stochastic prediction defines token probabilities; and what inference costs follow. These questions define the central technical agenda for Stages 3--5.
+\paragraph{Open design problems.} Implementing Stage 5 requires machinery for maintaining and updating the scene across positions, analogous to persistent video world models. A concrete architecture must specify how event-level scene intervals synchronize with variable-length language; how the readout selects relevant state without an unrestricted hidden-state bypass; which loss prevents drift into an arbitrary recurrent code; whether physical and schematic factors acquire causally distinguishable roles despite being distributed or superposed; how stochastic prediction defines token probabilities; and whether iterative substrate generation can remain synchronized with lexical or span emission at acceptable inference cost. These questions define the central technical agenda for Stages 3--5.
 
 \section{Related Work}
 
@@ -307,6 +307,20 @@ Output: word $\to$ ``description'' (one per line)
 \medskip
 Vocabulary: [vocabulary list]
 \end{quote}
+
+\begin{minipage}{\linewidth}
+Two separate out-of-vocabulary probes illustrate the intended authoring operation on harder abstractions:
+
+\begin{quote}
+\small\itshape
+emergence $\to$ ``A cluster of iron filings scattered on a dark surface, individually pointing in random directions, but collectively forming a smooth, unmistakable spiral pattern radiating outward from a central magnet hidden beneath the surface.''
+
+\medskip
+karma $\to$ ``An open ledger lying flat, its left page filled with dense columns of small handwritten figures, its right page bearing a single large number at the bottom that exactly equals their sum, a quill resting across the spine as if just set down.''
+\end{quote}
+\end{minipage}
+
+These examples are not members of the released vocabulary and are not experimental evidence. They show the intended compression of an abstract concept into a renderable schema: iron filings reuse a familiar physics demonstration, while the ledger frames karma through cumulative accounting. The examples also expose a risk of the method: an authoring model can import culturally specific explanatory conventions, which should be recorded and audited rather than treated as universal.
 
 The minimal prompt leaves composition and metaphor selection largely unconstrained, preserving variation but reducing experimental control. The one substrate-specific constraint --- the vehicle-collision rule, a property of this architecture rather than a general rule for description writing --- is stated explicitly. The prompt may still admit culturally conventional or lexically identifying depictions (§8.1). The resulting vocabulary should therefore be treated as one authored target set, not as a privileged mapping from words to cognitive primitives.
 
@@ -528,6 +542,8 @@ The reported runs use the TinyStories revision \texttt{f54c09fd2331}. Their mani
 \bibitem{gurnee2024spacetime} W. Gurnee and M. Tegmark. Language Models Represent Space and Time. \emph{ICLR}, 2024.
 
 \bibitem{barsalou} L. W. Barsalou. Perceptual symbol systems. \emph{Behavioral and Brain Sciences}, 1999.
+
+\bibitem{paivio} A. Paivio. \emph{Mental Representations: A Dual Coding Approach}. Oxford University Press, 1986.
 
 \bibitem{lakoff_johnson} G. Lakoff and M. Johnson. \emph{Metaphors We Live By}. University of Chicago Press, 1980.
 
